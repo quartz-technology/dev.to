@@ -13,7 +13,7 @@ As security measure you setup a firewall and open port `80` and `443` to allow t
 ![basic application deployment on a VPS using NGINX as proxy exposing port 80 and 443](./nginx-simple-app-architecture.png)
 
 And then it comes to set up HTTPS, and questions like "should I expose my application before enabling HTTPS?", 
-"how do I just do that?", "wait, where do I store those configs files?".
+"how do I just do that?", "wait, where do I store those configuration files?".
 
 This article targets beginners who want a simple and fast way to set HTTPS on any application
 deployed on a VPS.
@@ -22,8 +22,8 @@ deployed on a VPS.
 
 A bit of theory before starting, why is it important to set up HTTPS on your application?
 
-Basically, HTTPS add a security layer around HTTP protocol thanks TLS encryption.
-When a request is sent with HTTPS, it hide the content of the request, so it cannot be
+Basically, HTTPS adds a security layer around HTTP protocol thanks to TLS encryption.
+When a request is sent with HTTPS, it hides the content of the request, so it cannot be
 intercepted and used by an attacker.
 
 Here is a [great article from CloudFlare](https://www.cloudflare.com/en-gb/learning/ssl/why-use-https/) for the most curious.
@@ -37,7 +37,7 @@ To begin, we need to install [Nginx](https://www.cloudflare.com/en-gb/learning/s
 and [Certbot](https://certbot.eff.org).
 
 Nginx is a powerful tool for web serving. We will use it to catch requests sent to
-the domain name and redirect it to the application.
+the domain name and redirect them to the application.
 Certbot is a simple CLI to set HTTPS on a server.
 
 You do not need to set up your application to enable HTTPS, you can do that later.
@@ -49,7 +49,7 @@ Let's install Nginx.
 sudo apt update
 
 # Install Nginx
-sudo apt install nginx
+sudo apt install nginx -y
 ```
 
 This will automatically set up Nginx as a service in your VPS so it will be automatically restart
@@ -248,7 +248,7 @@ server {
 
 The file has been updated by Certbot to serve HTTPS on your dns and also redirect
 HTTP traffic to HTTPS.
-It may be a bit messy so clean extra space and reorder tab if necessary.
+It may be a bit messy so clean extra spaces and reorder tabs if necessary.
 
 You can go back on your domain name and see that HTTPS is now enable.
 
@@ -276,6 +276,6 @@ For example
 I hope this article was useful to you! I remember my first time struggling to add HTTPS on
 my first application with 10 different tabs opened about Nginx and its obscure configuration.
 
-Don't hesitate to reach me out or comment if you have any question 🚀
+Feel free to reach me out or comment if you have any question 🚀
 
 Written by [Vasek - Tom C.](https://twitter.com/TheRealVasek) for [Quartz](https://twitter.com/qu3rtz).
