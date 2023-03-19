@@ -12,7 +12,7 @@ GitHub actions yaml to only few lines without any duplications.
 Let's begin with a bit of context to understand why and when the usage of reusable workflows can be useful.
 
 Here's a list of exhaustive reasons:
-- You have some duplications in your actions, for instance when you want to build and push your application's
+- You have some duplications in your actions, for example when you want to build and push your application's
 services on a registry (like Docker Hub, GitHub registry...)
 - You identify common pattern, setup or steps in your CI, this could be setup step or whole processes where
 the only difference can be abstract with variables. For instance, you have same steps but in different directories.
@@ -21,7 +21,7 @@ the only difference can be abstract with variables. For instance, you have same 
 If you can recognize one of your project, this blog post is written for you!
 
 For this project, I will use a real case that I met for one of my client: [Pridwen](https://www.pridwen.fi).
-This project is a financial tool composed of multiple services, some are fetching data, there is 2 REST API, a Websocket
+This project is a financial tool composed of multiple services, some are used to fetch data, there are 2 REST APIs, Websocket
 services, telegrams bots and also additional utilities processes for backup, observabilities, update and analysis.
 
 In total, there are 10 Python services that need to be packaged so it can be deployed on an VPS.
@@ -93,7 +93,7 @@ jobs:
             <registry address>/<repo>/<service_name>:<version tag>
 ```
 
-As you see, this is a lot of steps, which are basically the same no matter the service nor the language.
+As you can see, there are a lot of steps, which are basically the same no matter the service nor the language.
 You just need to pick up the write context and Dockerfile to push it to a registry.
 
 This is a typical situation where a reusable workflow could be useful.
